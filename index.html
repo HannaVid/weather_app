@@ -4,10 +4,117 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Weather Forecast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,400;0,500;0,600;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/ddb2783df6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <h1>Hello Git!</h1>
+    <div class="container mt-5">
+      <!-- Search block -->
+      <form id="search-form">
+        <div class="input-group mx-auto" style="width: 300px">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter a city"
+            id="city-input"
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="submit"
+            autofocus="on"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <button
+            class="btn btn-outline-secondary"
+            id="current-location-btn"
+            autofocus="on"
+          >
+            <i class="fa-solid fa-thumbtack"></i>
+          </button>
+        </div>
+      </form>
+      <!-- Main block -->
+      <div class="main_container">
+        <div class="row">
+          <div class="col-lg-12 gy-1">
+            <h3 id="date">Today</h3>
+
+            <!-- <div class="row mt-3">
+              <div class="col-sm-6 px-4">MAY 06</div>
+              <div class="col-sm-6 text-end">WEDNESDAY</div>
+            </div> -->
+
+            <h1 id="currentCity">City</h1>
+            <div class="row">
+              <div class="col-lg-12">
+                <span class="current_temperature" id="current_temp"> 0 </span>
+                <sup class="convert_units">
+                  <a href="#" id="celsius-link"> °C </a>
+                  |
+                  <a href="#" id="fahrenheit-link"> °F </a>
+                </sup>
+              </div>
+              <!-- <div class="col-lg-6">
+                <img
+                  class="today_img"
+                  src="images/icon/weather_icons-01.svg"
+                  alt=""
+                />
+              </div> -->
+            </div>
+
+            <div class="row">
+              <!-- <div class="col-sm-6">
+                <span class="current_day_temperature">
+                  Day <span id="temp_max">0</span>° •
+                  <span class="current_night_temperature"> 
+                    Night <span id="temp_min">0</span>° 
+                  </span>
+                </span> -->
+            </div>
+            <div class="col-sm-6">
+              <span class="description" id="current_description"
+                >Description</span
+              >
+              <br />
+              Humidity: <span id="current_humidity">0</span>%
+              <br />
+              Wind: <span id="current_wind">0 </span> km/h
+            </div>
+          </div>
+        </div>
+        <!-- The block of daily forecast -->
+        <!-- End second column -->
+      </div>
+      <!-- End main block -->
+      <!-- Footer -->
+      <footer>
+        <div class="container mt-5">
+          <ul class="list-unstyled">
+            <li class="style_footer">⦁ Coded by Hanna Vidieniova ⦁</li>
+            <li class="style_footer">2022</li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script src="src/index.js"></script>
   </body>
 </html>

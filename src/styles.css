@@ -1,0 +1,89 @@
+body {
+  color: #fff;
+  font-size: 16px;
+  font-family: "Prompt", sans-serif;
+  background-image: url("texture.jpg");
+  background-attachment: fixed;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: #99bfb5;
+}
+
+img {
+  height: 64px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h3 {
+  background: #0a6067;
+  padding-left: 10px;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 56px;
+}
+
+.day_forecast {
+  text-align: center;
+}
+
+.main_container {
+  background-color: rgb(0 141 146 / 40%);
+  width: 100%;
+  max-width: 320px;
+  margin: 60px auto;
+  padding: 40px;
+  box-shadow: 0px 1px 5px 10px rgb(10 96 103 / 40%);
+}
+
+.today_img {
+  width: 100%;
+  height: auto;
+}
+
+.current_temperature {
+  font-size: 120px;
+  font-weight: 400;
+}
+
+.convert_units {
+  position: relative;
+  top: -74px;
+  font-size: 15px;
+}
+.style_footer {
+  letter-spacing: 4px;
+  word-spacing: 4px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #99bfb5;
+}
+
+.btn-outline-secondary {
+  background-color: #0a6067;
+  border-color: #0a6067;
+  color: #fff;
+}
+
+.daily_forecast {
+  height: 64px;
+}
+
+.description {
+  text-transform: uppercase;
+}
