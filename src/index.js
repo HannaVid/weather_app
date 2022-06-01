@@ -56,7 +56,15 @@ function displayWeather(response) {
   );
   //Show description
   document.querySelector("#current_description").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description; //main
+  //Show icon
+  let iconCurrent = document.querySelector("#icon");
+  iconCurrent.setAttribute(
+    "src",
+    `images/icon/${response.data.weather[0].icon}.svg`
+    // `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconCurrent.setAttribute("alt", response.data.weather[0].description);
 }
 
 ///Geolocation

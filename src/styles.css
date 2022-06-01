@@ -15,12 +15,12 @@ a:hover {
   color: #99bfb5;
 }
 
-img {
+/* img {
   height: 64px;
   display: block;
   margin: 0 auto;
   text-align: center;
-}
+} */
 
 h3 {
   background: #0a6067;
@@ -41,7 +41,7 @@ h1 {
 .main_container {
   background-color: rgb(0 141 146 / 40%);
   width: 100%;
-  max-width: 320px;
+  max-width: 600px;
   margin: 60px auto;
   padding: 40px;
   box-shadow: 0px 1px 5px 10px rgb(10 96 103 / 40%);
@@ -49,7 +49,7 @@ h1 {
 
 .today_img {
   width: 100%;
-  height: auto;
+  max-height: 250px;
 }
 
 .current_temperature {
