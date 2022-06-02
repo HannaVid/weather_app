@@ -47,6 +47,7 @@ function displayWeather(response) {
   document.querySelector("#current_temp").innerHTML = Math.round(
     response.data.main.temp
   );
+  celsiusTemperature = response.data.main.temp; //Value of the global variable
   //Show Humidity
   document.querySelector("#current_humidity").innerHTML =
     response.data.main.humidity;
@@ -81,8 +82,33 @@ function searchLocation(position) {
   axios.get(url).then(displayWeather);
 }
 
-let formSearching = document.querySelector("#search-form");
-formSearching.addEventListener("submit", searchCity);
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  //remove the active class from the celsius link
+  celsiusLink.classList.remove("active");
+  //add the active class to the fahrenheit link
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureCurrent = document.querySelector("#current_temp");
+  temperatureCurrent.innerHTML = Math.round(fahrenheitTemperature);
+  // alert(fahrenheitTemperature);
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  //add the active class from the celsius link
+  celsiusLink.classList.add("active");
+  //remove the active class from from the fahrenheit link
+  fahrenheitLink.classList.remove("active");
+  let temperatureCurrent = document.querySelector("#current_temp");
+  temperatureCurrent.innerHTML = Math.round(celsiusTemperature);
+}
+
+// let formSearching = document.querySelector("#search-form");
+// formSearching.addEventListener("submit", searchCity);
+
+//Global variable
+let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
@@ -90,5 +116,13 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-btn");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-// searchCity("London");
-navigator.geolocation.getCurrentPosition(searchLocation);
+// Default city for searching
+searchCity("London");
+// navigator.geolocation.getCurrentPosition(searchLocation);
+
+//Convert from celsius to fahrenheit
+let fahrenheitLink = document.querySelector(`#fahrenheit-link`);
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+//Convert from fahrenheit to celsius
+let celsiusLink = document.querySelector(`#celsius-link`);
+celsiusLink.addEventListener("click", convertToCelsius);

@@ -30,7 +30,7 @@
       <form id="search-form">
         <div class="input-group mx-auto" style="width: 300px">
           <input
-            type="text"
+            type="search"
             class="form-control"
             placeholder="Enter a city"
             id="city-input"
@@ -67,9 +67,9 @@
               <div class="col-lg-6">
                 <span class="current_temperature" id="current_temp"> 0 </span>
                 <sup class="convert_units">
-                  <a href="#" id="celsius-link"> °C </a>
+                  <a href="#" id="celsius-link" class="active"> °C </a>
                   |
-                  <a href="#" id="fahrenheit-link"> °F </a>
+                  <a href="#" id="fahrenheit-link" class=""> °F </a>
                 </sup>
               </div>
               <div class="col-lg-6">
@@ -77,15 +77,15 @@
               </div>
             </div>
 
-            <div class="row">
-              <!-- <div class="col-sm-6">
+            <!-- <div class="row">
+              <div class="col-sm-6">
                 <span class="current_day_temperature">
                   Day <span id="temp_max">0</span>° •
                   <span class="current_night_temperature"> 
                     Night <span id="temp_min">0</span>° 
                   </span>
-                </span> -->
-            </div>
+                </span>
+            </div> -->
             <div class="col-sm-6">
               <span class="description" id="current_description"
                 >Description</span
